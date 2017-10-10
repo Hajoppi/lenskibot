@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Hajoppi/lenskibot/issues"
   },
-  "homepage": "https://github.com/Hajoppi/lenskibot#readme"
+  "homepage": "https://github.com/Hajoppi/lenskibot#readme",
+  "dependencies": {
+    "telebot": "^1.2.2"
+  }
 }
