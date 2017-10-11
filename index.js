@@ -14,7 +14,7 @@ function difference(){
     return parseInt(dif/1000);
 }
 
-bot.on('/juoJagulaari', function(msg){
+bot.on('/juoJaguar', function(msg){
     jagulaarit += 1;
     return msg.reply.text("Jaguraaleja juotu: "+ jagulaarit)
 });
@@ -22,6 +22,13 @@ bot.on('/juoJagulaari', function(msg){
 bot.on('/aikaaLenskiin', function(msg){
     var seconds = difference();
     return msg.reply.text("Aikaa lenskiin "+seconds + " sekuntia");
+});
+
+bot.on('/start', msg => {
+    let replyMarkup = bot.keyboard([
+        ['/juoJaguar', '/aikaaLenskiin'],
+    ], {resize: true});
+    return bot.sendMessage(msg.from.id, 'started', {replyMarkup});
 });
 
 bot.start();
